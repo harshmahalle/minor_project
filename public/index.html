@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Dashboard</title>
+  <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+    /* Testimonial Styles */
+    .testimonial-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-content blockquote {
+      background-color: aqua;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-separator {
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), #FFD700, rgba(255, 255, 255, 0));
+      margin: 20px 0;
+    }
+    </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar section -->
+  <nav class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#" class="text-white text-2xl font-semibold">Dashboard Logo</a>
+
+      <!-- Navigation Links -->
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#" class="text-white">Home</a></li>
+        <li><a href="#" class="text-white">Features</a></li>
+        <li><a href="#" class="text-white">Benefits</a></li>
+        <li><a href="#" class="text-white">AI With You</a></li>
+        <li><a href="#" class="text-white">Real-Life Example</a></li>
+        <li><a href="#" class="text-white">Get Started with You</a></li>
+      </ul>
+
+      <!-- Mobile Menu Button (Hidden by default, visible on small screens) -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu (Hidden by default, visible on small screens) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-blue-500">
+    <ul class="py-4 space-y-2 text-center">
+      <li><a href="#" class="block text-white">Home</a></li>
+      <li><a href="#" class="block text-white">Features</a></li>
+      <li><a href="#" class="block text-white">Benefits</a></li>
+      <li><a href="#" class="block text-white">AI With You</a></li>
+      <li><a href="#" class="block text-white">Real-Life Example</a></li>
+      <li><a href="#" class="block text-white">Get Started with You</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero section -->
+  <section class="relative bg-gradient-to-b from-blue-500 to-indigo-700">
+    <div class="w-10/12 max-w-[1080px] flex flex-col lg:flex-row justify-between items-center mx-auto text-white py-10">
+      <!-- Left side: Content -->
+      <div class="flex items-center justify-center lg:w-2/5">
+        <div class="text-center lg:text-left">
+          <h2 class="text-4xl font-semibold text-white mb-4 md:text-5xl lg:text-6xl">Social Media Dashboard</h2>
+          <p class="text-lg mb-6 md:text-xl lg:text-2xl text-white">
+            Managing your social media presence has never been easier. Take control with our innovative dashboard that makes monitoring and analysis simple. Get started today!
+          </p>
+          <a href="" class="get-started-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full text-lg transition duration-300">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Right side: Image -->
+      <img src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/image/rDtN98Qoishumwih/a-big-set-of-various-creative-social-media-icons_SB_PM.jpg" alt="Dashboard Image" class="w-full h-auto lg:w-2/5 lg:max-w-[480px] mx-auto rounded-lg shadow-lg">
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="bg-gray-100 py-10">
+    <div class="container w-10/12 max-w-[1080px] mx-auto text-center">
+      <h2 class="text-4xl font-semibold text-gray-800 mb-8 md:text-5xl lg:text-6xl">Overview</h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8 md:text-xl lg:text-2xl p-6 rounded-lg shadow-2xl">
+        Our social media dashboard is an all-in-one solution for managing your social media accounts.
+        See which content is generating the most buzz, track your follower growth, and build out your content calendar in one centralized location.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features section -->
+  <section class="bg-gray-100 py-16">
+    <h2 class="w-10/12 mx-auto text-4xl font-semibold text-gray-800  mb-8 md:text-5xl lg:text-6xl text-center">Features</h2>
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-3 w-10/12 mx-auto">
+      <!-- Feature 1 -->
+      <div class="p-6 rounded-lg bg-gradient-to-r from-purple-400 to-pink-500 shadow-md text-center">
+        <h3 class="text-2xl font-extrabold text-white mb-4 ">Post Scheduling</h3>
+        <p class="text-lg text-black font-bold">Schedule your posts for optimal engagement times and organize your content by platform.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="p-6 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-500 shadow-md text-center">
+        <h3 class="text-2xl font-extrabold text-white mb-4">Social Listening</h3>
+        <p class="text-lg text-black  font-bold">Access insights to see what people are saying about your brand and respond to comments directly from the dashboard.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="p-6 rounded-lg bg-gradient-to-r from-green-400 to-lime-400 shadow-md text-center">
+        <h3 class="text-2xl font-extrabold text-white mb-4">Engagement Analytics</h3>
+        <p class="text-lg text-black font-bold">Understand what types of content drive engagement and increase your followers by identifying peak engagement times.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits Section with Gradient Background -->
+  <section class="py-16 bg-gradient-to-b from-purple-600 via-purple-500 to-indigo-600 text-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8 text-black">Benefits</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-10/12 mx-auto">
+        <!-- Benefit 1 -->
+        <div class="bg-gradient-to-b from-blue-400 to-blue-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ_JC504VAzK0qsKiVUmARspo3RUvjV6kQSPuIoNPsQofA8NjGT" alt="Benefit 1" class="w-40 h-25 mx-auto mb-4 rounded-lg">
+          <h3 class="text-2xl font-bold mb-2">Streamlined Management</h3>
+          <p class="text-gray-700 font-extrabold text-lg">Save time by monitoring all of your social media accounts in one place.</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="bg-gradient-to-b from-green-400 to-green-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <img src="https://sigmamagic.com/blogs/images/analytics_benefits1.png" alt="Benefit 2" class="w-40 h-25 mx-auto mb-4 rounded-lg">
+          <h3 class="text-2xl font-bold mb-2">Better Decision Making</h3>
+          <p class="text-gray-700 font-extrabold text-lg">Make informed decisions based on real-time data and analytics and keep your strategy ahead of the curve.</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="bg-gradient-to-b from-red-400 to-red-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <img src="https://klientsolutech.com/wp-content/uploads/2023/08/importance-of-social-media-marketing-for-business.jpg" alt="Benefit 3" class="w-40 h-25 mx-auto mb-4 rounded-lg">
+          <h3 class="text-2xl font-bold mb-2">Increased Growth</h3>
+          <p class="text-gray-700 font-extrabold text-lg">Boost engagement and increase customer satisfaction by regularly analyzing your content and making data-driven decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytics Section with Gradient Background -->
+  <section class="py-16  bg-gradient-to-b from-yellow-500 to-yellow-700 text-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl text-black font-bold mb-8">Analytics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Analytics Item 1 -->
+        <div class="bg-gradient-to-b from-blue-400 to-blue-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2">Engagement Rate</h3>
+          <p class="text-gray-700 text-lg">Measure engagement with posts in real time.</p>
+        </div>
+
+        <!-- Analytics Item 2 -->
+        <div class="bg-gradient-to-b from-green-400 to-green-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2">Top Performing Content</h3>
+          <p class="text-gray-700 text-lg">View which posts are resonating the most with your followers.</p>
+        </div>
+
+        <!-- Analytics Item 3 -->
+        <div class="bg-gradient-to-b from-yellow-400 to-yellow-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2">Activity by Channel</h3>
+          <p class="text-gray-700 text-lg">Know which social media channel is generating the most engagement.</p>
+        </div>
+
+        <!-- Analytics Item 4 -->
+        <div class="bg-gradient-to-b from-red-400 to-red-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2">Follower Demographics</h3>
+          <p class="text-gray-700 text-lg">Observe the demographics of your followers for targeting purposes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI with You Section with Gradient Background -->
+  <section class="py-16  bg-gradient-to-b from-yellow-500 to-yellow-700 text-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-black mb-8">AI with You</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- AI Item 1 -->
+        <div class="bg-gradient-to-b from-blue-400 to-blue-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2">Content Recommendation</h3>
+          <p class="text-gray-700">Get content recommendations to improve engagement and strengthen your brand's online presence.</p>
+        </div>
+
+        <!-- AI Item 2 -->
+        <div class="bg-gradient-to-b from-green-400 to-green-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2">Automated Reporting</h3>
+          <p class="text-gray-700">Receive automated reports on your social media metrics to keep you informed and save you time.</p>
+        </div>
+
+        <!-- AI Item 3 -->
+        <div class="bg-gradient-to-b from-yellow-400 to-yellow-600 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2">Data Insights</h3>
+          <p class="text-gray-700">Extract valuable insights from data using our AI-assisted analytics tools.</p>
+        </div>
+        
+      </div>
+    </div>
+   </section>
+
+  <!-- Testimonials Section -->
+  <section class="bg-sky-blue py-16 text-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-semibold mb-8 text-black md:text-5xl lg:text-6xl">Testimonials</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Left Side (Testimonial Cards) -->
+        <div class="space-y-8">
+          <!-- Testimonial Card 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <blockquote class="italic  text-lg mb-4">
+                "Improved Efficiency"
+              </blockquote>
+              <p class="text-gray-600">
+                "Thanks to this dashboard, I was able to cut down my social media management time by half. Highly recommended!"
+              </p>
+            </div>
+            <div class="testimonial-separator"></div>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <blockquote class="italic text-lg mb-4">
+                "Game Changer"
+              </blockquote>
+              <p class="text-gray-600">
+                "Our social media impact has increased significantly since using the dashboard. It's been a total game changer!"
+              </p>
+            </div>
+            <div class="testimonial-separator"></div>
+          </div>
+        </div>
+
+        <!-- Right Side (Get Started Now) -->
+        <div class="relative flex flex-col justify-center items-center text-center">
+          <h3 class="text-3xl font-semibold mb-4">Get Started Now</h3>
+          <p class="text-gray-600 mb-6">
+            Join thousands of happy customers and start boosting your social media engagement today. Sign up for our free trial!
+          </p>
+          <a href="" class="get-started-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full text-lg transition duration-300">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Started CTA -->
+  <section id="get-started" class=" get-started-btn bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-semibold mb-4 md:text-5xl lg:text-6xl">Get Started Today</h2>
+      <p class="text-lg mb-8 md:text-xl lg:text-2xl">Don't miss out on the opportunity to enhance your social media presence. Sign up now!</p>
+      <a href="" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 Social Media Dashboard. All rights reserved.</p>
+    </div>
+  </footer>
+ 
+  <!-- JavaScript to toggle mobile menu -->
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Mobile Menu Button (Hidden by default, visible on small screens) -->
+  <button id="mobile-menu-button" class="text-white">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+  </svg>
+  </button>
+
+  <!-- Mobile Menu (Hidden by default, visible on small screens) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-blue-500">
+  <ul class="py-4 space-y-2 text-center">
+      <li><a href="#" class="block text-white">Home</a></li>
+      <li><a href="#" class="block text-white">Features</a></li>
+      <li><a href="#" class="block text-white">Benefits</a></li>
+      <li><a href="#" class="block text-white">AI With You</a></li>
+      <li><a href="#" class="block text-white">Real-Life Example</a></li>
+      <li><a href="#" class="block text-white">Get Started with You</a></li>
+  </ul>
+  </div>
+
+  <!-- JavaScript to open the registration form in a new webpage -->
+  <script>
+  const getStartedBtns = document.querySelectorAll('.get-started-btn'); // Assuming you have multiple "Get Started" buttons
+
+  // Function to open the registration form in a new webpage
+  function openRegistrationForm() {
+    // Specify the URL of your registration form HTML file here
+    const registrationFormUrl = 'registration.html';
+    
+    // Open the registration form in a new tab or window
+    window.open(registrationFormUrl, '_blank');
+  }
+
+  // Event listeners for all "Get Started" buttons
+  getStartedBtns.forEach((btn) => {
+    btn.addEventListener('click', openRegistrationForm);
+  });
+  </script>
+
+  <!-- JavaScript to toggle mobile menu -->
+  <script>
+  //const mobileMenuButton = document.getElementById('mobile-menu-button');
+ // const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  </script>
+
+  <!-- Firebase scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+
+  <!-- Add other Firebase services you need here (e.g., Firebase Database) -->
+  <script>
+  const firebaseConfig = {
+      apiKey: "AIzaSyBI6i02dKO3sPmlSLBLZMRFMtosFcpe_DQ",
+      authDomain: "minorproject-86fb0.firebaseapp.com",
+      projectId: "minorproject-86fb0",
+      storageBucket: "minorproject-86fb0.appspot.com",
+      messagingSenderId: "598323291029",
+      appId: "1:598323291029:web:f20ec861c7ba7047058c9c",
+      measurementId: "G-Y0LQK8R2D2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  </script>
+
+</body>
+
+</html>
