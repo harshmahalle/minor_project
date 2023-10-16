@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media Dashboard</title>
+
   <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
 
@@ -35,6 +36,21 @@
     }
     </style>
 
+    <!-- JavaScript to toggle menu -->
+    <script>
+    // Assuming you have a variable `userAuthenticated` that indicates the user's authentication status
+    const authMenu = document.getElementById('auth-menu');
+    const guestMenu = document.getElementById('guest-menu');
+
+    if (userAuthenticated) {
+      authMenu.style.display = 'block';
+      guestMenu.style.display = 'none';
+    } else {
+      authMenu.style.display = 'none';
+      guestMenu.style.display = 'block';
+    }
+    </script>
+
 </head>
 
 <body>
@@ -42,17 +58,17 @@
   <!-- Navbar section -->
   <nav class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 p-4">
     <div class="container mx-auto flex justify-between items-center">
-      <!-- Logo -->
       <a href="#" class="text-white text-2xl font-semibold">Dashboard Logo</a>
-
-      <!-- Navigation Links -->
-      <ul class="hidden md:flex space-x-6">
+      <ul class="hidden md:flex space-x-6" id="guest-menu">
         <li><a href="#" class="text-white">Home</a></li>
-        <li><a href="#" class="text-white">Features</a></li>
-        <li><a href="#" class="text-white">Benefits</a></li>
-        <li><a href="#" class="text-white">AI With You</a></li>
-        <li><a href="#" class="text-white">Real-Life Example</a></li>
-        <li><a href="#" class="text-white">Get Started with You</a></li>
+        <li><a href="/login" class="text-white">Log in</a></li>
+        <li><a href="/register" class="text-white">Register</a></li>
+      </ul>
+      <!-- Add user-specific menu items if the user is authenticated -->
+      <ul class="hidden md:flex space-x-6" id="auth-menu">
+        <!-- Add user-specific menu items here -->
+        <li><a href="/dashboard" class="text-white">Dashboard</a></li>
+        <li><a href="/logout" class="text-white">Logout</a></li>
       </ul>
 
       <!-- Mobile Menu Button (Hidden by default, visible on small screens) -->
@@ -98,7 +114,7 @@
   </section>
 
   <!-- Overview Section -->
-  <section class="bg-gray-100 py-10">
+  <section class="bg-gray-100 py-4">
     <div class="container w-10/12 max-w-[1080px] mx-auto text-center">
       <h2 class="text-4xl font-semibold text-gray-800 mb-8 md:text-5xl lg:text-6xl">Overview</h2>
       <p class="text-lg text-gray-600 leading-relaxed mb-8 md:text-xl lg:text-2xl p-6 rounded-lg shadow-2xl">
@@ -220,53 +236,73 @@
       </div>
     </div>
    </section>
-
-  <!-- Testimonials Section -->
-  <section class="bg-sky-blue py-16 text-white">
+  <!--Testinomial Section-->
+   <section class="bg-sky-blue py-16 text-white">
     <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-semibold mb-8 text-black md:text-5xl lg:text-6xl">Testimonials</h2>
+        <h2 class="text-4xl font-semibold mb-8 text-black md:text-5xl lg:text-6xl">Testimonials</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Left Side (Testimonial Cards) -->
-        <div class="space-y-8">
-          <!-- Testimonial Card 1 -->
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <blockquote class="italic  text-lg mb-4">
-                "Improved Efficiency"
-              </blockquote>
-              <p class="text-gray-600">
-                "Thanks to this dashboard, I was able to cut down my social media management time by half. Highly recommended!"
-              </p>
+        <div class="grid grid-cols-2 gap-8">
+            <!-- Left Side (Testimonial Cards) -->
+            <div class="space-y-8">
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <blockquote class="italic text-lg mb-4">
+                            "Improved Efficiency"
+                        </blockquote>
+                        <p class="text-gray-600">
+                            "Thanks to this dashboard, I was able to cut down my social media management time by half. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="testimonial-separator"></div>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <blockquote class="italic text-lg mb-4">
+                            "Game Changer"
+                        </blockquote>
+                        <p class="text-gray-600">
+                            "Our social media impact has increased significantly since using the dashboard. It's been a total game changer!"
+                        </p>
+                    </div>
+                    <div class="testimonial-separator"></div>
+                </div>
             </div>
-            <div class="testimonial-separator"></div>
-          </div>
 
-          <!-- Testimonial Card 2 -->
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <blockquote class="italic text-lg mb-4">
-                "Game Changer"
-              </blockquote>
-              <p class="text-gray-600">
-                "Our social media impact has increased significantly since using the dashboard. It's been a total game changer!"
-              </p>
+            <!-- Right Side (Testimonial Cards) -->
+            <div class="space-y-8">
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <blockquote class="italic text-lg mb-4">
+                            "Impressive Results"
+                        </blockquote>
+                        <p class="text-gray-600">
+                            "Our social media reach has grown beyond our expectations. This dashboard is a must-have for any business."
+                        </p>
+                    </div>
+                    <div class="testimonial-separator"></div>
+                </div>
+
+                <!-- Testimonial Card 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <blockquote class="italic text-lg mb-4">
+                            "User-Friendly"
+                        </blockquote>
+                        <p class="text-gray-600">
+                            "I love how easy it is to use this dashboard. It has simplified my social media management tasks."
+                        </p>
+                    </div>
+                    <div class="testimonial-separator"></div>
+                </div>
             </div>
-            <div class="testimonial-separator"></div>
-          </div>
         </div>
-
-        <!-- Right Side (Get Started Now) -->
-        <div class="relative flex flex-col justify-center items-center text-center">
-          <h3 class="text-3xl font-semibold mb-4">Get Started Now</h3>
-          <p class="text-gray-600 mb-6">
-            Join thousands of happy customers and start boosting your social media engagement today. Sign up for our free trial!
-          </p>
-          <a href="" class="get-started-btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full text-lg transition duration-300">Sign Up</a>
-        </div>
-      </div>
     </div>
-  </section>
+   </section>
+
 
   <!-- Get Started CTA -->
   <section id="get-started" class=" get-started-btn bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white py-16">
@@ -302,7 +338,7 @@
   </button>
 
   <!-- Mobile Menu (Hidden by default, visible on small screens) -->
-  <div id="mobile-menu" class="hidden md:hidden bg-blue-500">
+  <div id="mobile-menu-button" class="hidden md:hidden bg-blue-500">
   <ul class="py-4 space-y-2 text-center">
       <li><a href="#" class="block text-white">Home</a></li>
       <li><a href="#" class="block text-white">Features</a></li>
@@ -312,54 +348,40 @@
       <li><a href="#" class="block text-white">Get Started with You</a></li>
   </ul>
   </div>
+  
+  <!-- JavaScript to toggle mobile menu -->
+  <script>
+      // Check if the variables already exist
+      if (!window.mobileMenuButton) {
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          if (mobileMenuButton) {
+              mobileMenuButton.addEventListener('click', () => {
+                  const mobileMenu = document.getElementById('mobile-menu');
+                  if (mobileMenu) {
+                      mobileMenu.classList.toggle('hidden');
+                  }
+              });
+          }
+      }
+  </script>
 
   <!-- JavaScript to open the registration form in a new webpage -->
   <script>
-  const getStartedBtns = document.querySelectorAll('.get-started-btn'); // Assuming you have multiple "Get Started" buttons
+    const getStartedBtns = document.querySelectorAll('.get-started-btn'); // Assuming you have multiple "Get Started" buttons
 
-  // Function to open the registration form in a new webpage
-  function openRegistrationForm() {
-    // Specify the URL of your registration form HTML file here
-    const registrationFormUrl = 'registration.html';
-    
-    // Open the registration form in a new tab or window
-    window.open(registrationFormUrl, '_blank');
-  }
+    // Function to open the registration form in a new webpage
+    function openRegistrationForm() {
+      // Specify the URL of your registration form HTML file here
+      const registrationFormUrl = 'registration.html';
 
-  // Event listeners for all "Get Started" buttons
-  getStartedBtns.forEach((btn) => {
-    btn.addEventListener('click', openRegistrationForm);
-  });
-  </script>
+      // Open the registration form in a new tab or window
+      window.open(registrationFormUrl, '_blank');
+    }
 
-  <!-- JavaScript to toggle mobile menu -->
-  <script>
-  //const mobileMenuButton = document.getElementById('mobile-menu-button');
- // const mobileMenu = document.getElementById('mobile-menu');
-
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-  </script>
-
-  <!-- Firebase scripts -->
-  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
-
-  <!-- Add other Firebase services you need here (e.g., Firebase Database) -->
-  <script>
-  const firebaseConfig = {
-      apiKey: "AIzaSyBI6i02dKO3sPmlSLBLZMRFMtosFcpe_DQ",
-      authDomain: "minorproject-86fb0.firebaseapp.com",
-      projectId: "minorproject-86fb0",
-      storageBucket: "minorproject-86fb0.appspot.com",
-      messagingSenderId: "598323291029",
-      appId: "1:598323291029:web:f20ec861c7ba7047058c9c",
-      measurementId: "G-Y0LQK8R2D2"
-  };
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    // Event listeners for all "Get Started" buttons
+    getStartedBtns.forEach((btn) => {
+      btn.addEventListener('click', openRegistrationForm);
+    });
   </script>
 
 </body>
