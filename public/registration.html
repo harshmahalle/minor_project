@@ -2,79 +2,110 @@
 <html lang="en">
 
 <head>
-  <!-- Your other head elements go here -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration</title>
-  <!-- Include Tailwind CSS -->
+  <!-- Enhanced Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom Styles */
+    .bg-gradient-purple-blue {
+      background: linear-gradient(90deg, #8a4fff, #0073e6);
+    }
+
+    /* Form Container Styles */
+    .form-container {
+      max-width: 400px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Form Element Styles */
+    .form-input {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      transition: border-color 0.3s;
+    }
+
+    .form-input:focus {
+      border-color: #8a4fff;
+      outline: none;
+    }
+
+    .btn-signup {
+      background-color: #8a4fff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn-signup:hover {
+      background-color: #0073e6;
+    }
+
+    .already-account {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .already-account a {
+      color: #8a4fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .already-account a:hover {
+      color: #0073e6;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
-<body class="bg-gradient-to-r from-purple-500 to-blue-500 min-h-screen flex items-center justify-center">
-  
-    <!-- Registration Modal -->
-    <div id="registration-modal" class="bg-white p-8 max-w-md rounded-lg shadow-lg">
-        <h2 class="text-3xl font-semibold text-gray-800 mb-6">Sign Up</h2>
-        <form id="registration-form">
-          <div class="mb-4">
-            <label for="email" class="block text-gray-600">Email</label>
-            <input type="email" id="email" name="email" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none">
-          </div>
-          <div class="mb-6">
-            <label for="password" class="block text-gray-600">Password</label>
-            <input type="password" id="password" name="password" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none">
-          </div>
+<body class="bg-gradient-purple-blue min-h-screen flex items-center justify-center">
 
-            <button type="button" id="signup-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none">
-              Sign Up
-            </button>
-            
-        </form>
-        <p class="text-gray-600 text-center mt-4">Already have an account? <a href="#" class="text-purple-600 hover:underline">Log in</a></p>
-    </div>
+  <div class="form-container p-6">
+    <form id="registration-form" action="/register" method="POST">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-600">Name</label>
+        <input type="text" id="name" name="name" class="form-input">
+      </div>
+      <div class="mb-4">
+        <label for="age" class="block text-gray-600">Age</label>
+        <input type="number" id="age" name="age" class="form-input">
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-gray-600">Email</label>
+        <input type="email" id="email" name="email" class="form-input">
+      </div>
+      <div class="mb-6">
+        <label for="password" class="block text-gray-600">Password</label>
+        <input type="password" id="password" name="password" class="form-input">
+      </div>
+      <!-- Display the error message here -->
+      <div id="error-message" style="color: red;"></div>
+      <button type="submit" value="submit" class="btn-signup">
+        Sign Up
+      </button>
+    </form>
+    <p class="text-gray-600 text-center mt-4 already-account">Already have an account? <a href="/login" class="hover:text-purple-600">Log in</a></p>
+  </div>
 
-    <!-- Firebase scripts -->
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
-
-    <!-- Firebase configuration script (initialize Firebase) -->
-    <script>
-      const firebaseConfig = {
-      apiKey: "AIzaSyBI6i02dKO3sPmlSLBLZMRFMtosFcpe_DQ",
-      authDomain: "minorproject-86fb0.firebaseapp.com",
-      projectId: "minorproject-86fb0",
-      storageBucket: "minorproject-86fb0.appspot.com",
-      messagingSenderId: "598323291029",
-      appId: "1:598323291029:web:f20ec861c7ba7047058c9c",
-      measurementId: "G-Y0LQK8R2D2"
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>    
-    
-    <!-- Your additional scripts for registration functionality go here -->
-    <script>
-      const signupBtn = document.getElementById('signup-btn');
-      if (signupBtn) {
-        signupBtn.addEventListener('click', () => {
-          const email = document.getElementById('email').value;
-          const password = document.getElementById('password').value;
-
-          firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-              // Registration success, you can redirect or perform other actions here.
-              console.log('Registration successful!', userCredential);
-            })
-            .catch((error) => {
-              // Handle registration errors here.
-              console.error('Registration error:', error);
-            });
-        });
-      }
-    </script>
-
+  <!-- Add this script tag to your HTML file -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error) {
+      // Display the error message to the user (you can style this as needed)
+      document.getElementById('error-message').textContent = error;
+    }
+  </script>
 </body>
 
-</html>
 
+</html>
